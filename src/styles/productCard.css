@@ -1,0 +1,121 @@
+/* Grid Layout for the Shop Page */
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* Individual Card Styling */
+.product-card {
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 400px; /* Tall, editorial aspect ratio */
+  overflow: hidden;
+  position: relative;
+  background-color: #1a1a1a;
+  border-radius: 4px;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover Effect: Zoom Image */
+.product-card:hover .product-image {
+  transform: scale(1.08);
+}
+
+/* Product Info */
+.product-info {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+.product-category {
+  font-size: 0.8rem;
+  color: #888;
+  margin-top: 4px;
+  text-transform: capitalize;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* "New" Badge */
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  color: #000;
+  padding: 4px 10px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2;
+  letter-spacing: 1px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .product-image-wrapper {
+    height: 320px;
+  }
+}
+
+/* ... existing styles above ... */
+
+/* Quick Add Button */
+.quick-add-btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.quick-add-btn:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1) translateY(0) !important;
+}
+
+/* Show button on card hover */
+.product-card:hover .quick-add-btn {
+  opacity: 1;
+  transform: translateY(0);
+}

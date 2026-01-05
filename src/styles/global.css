@@ -1,0 +1,56 @@
+/* Import Luxury Fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  /* --- COLOR PALETTE --- */
+  --bg-primary: #050505;       /* Deep Luxury Black */
+  --bg-secondary: #121212;     /* Card/Section Background */
+  --text-primary: #ffffff;     /* Primary Headings */
+  --text-secondary: #a1a1a1;   /* Subtitles/Descriptions */
+  --accent-gold: #D4AF37;      /* Luxury Gold */
+  --accent-gold-hover: #b5952f;
+  --border-light: rgba(255, 255, 255, 0.1);
+
+  /* --- SPACING & LAYOUT --- */
+  --max-width: 1440px;
+  --header-height: 80px;
+}
+
+/* --- RESET & BASE --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Lato', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+/* --- UTILITY CLASSES --- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}

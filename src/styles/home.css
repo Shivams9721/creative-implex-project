@@ -1,0 +1,130 @@
+/* --- HERO SECTION (Keep as is) --- */
+.hero-container {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: #ddd;
+}
+
+.cta-button {
+  padding: 15px 40px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* --- CATEGORY GRID (THE FIX) --- */
+.category-section {
+  padding: 4rem 2rem;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-card {
+  height: 400px; /* Fixed height is key */
+  position: relative;
+  overflow: hidden; /* Keeps zoom animation inside the box */
+  cursor: pointer;
+  background-color: #1a1a1a; /* Placeholder color */
+  border-radius: 4px;
+}
+
+/* 🟢 CRITICAL FIX: Make the Link tag fill the card 🟢 */
+.category-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none; /* Removes any default underline */
+}
+
+/* Image Animation (Preserved) */
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease; /* Smooth slow zoom */
+  opacity: 0.85;
+}
+
+/* Hover Effect (Preserved) */
+.category-card:hover img {
+  transform: scale(1.1); /* The Zoom */
+  opacity: 0.6; /* Darken slightly on hover */
+}
+
+.category-info {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  z-index: 10;
+  pointer-events: none; /* Allows clicking through text to the image */
+}
+
+.category-name {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
+  transition: border-color 0.3s;
+}
+
+.category-card:hover .category-name {
+  border-bottom: 1px solid #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .category-card { height: 300px; }
+}
